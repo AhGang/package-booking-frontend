@@ -1,6 +1,5 @@
 <template>
   <div class="about">
-    <h1>This is an client page</h1>
     <div class="div-card">
       <a-form :form="form" @submit="handleSubmit">
         <a-form-item label="运单号" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
@@ -25,7 +24,9 @@ export default {
        form: this.$form.createForm(this),
     };
   },
-  created() {},
+  created() {
+    this.$store.commit("getOrdersData")
+  },
   methods: {
     handleSubmit() {},
     addItem(){
